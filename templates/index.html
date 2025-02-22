@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        background-color: #f4f4f9;  /* Light grey background for the whole page */
+    }
+    .header {
+        background-color: #4CAF50;  /* Green header color */
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .card {
+        margin: 20px 0;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Subtle shadow for cards */
+    }
+    .card-header {
+        background-color: #007BFF;  /* Blue header for the cards */
+        color: white;
+        font-size: 18px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+    .card-body {
+        padding: 20px;
+    }
+    .btn-primary {
+        background-color: #007BFF;  /* Consistent blue button */
+        border: none;
+        border-radius: 5px;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;  /* Darker blue on hover */
+    }
+</style>
+
+<div class="header">
+    <h1>Health Prediction System</h1>
+    <p>Select a disease prediction model to proceed:</p>
+</div>
+
+<div class="card">
+    <div class="card-header">Diabetes Prediction</div>
+    <div class="card-body">
+        <p>Use this model to predict if a person is diabetic based on various health indicators.</p>
+        <a href="/diabetes" class="btn btn-primary">Predict Diabetes</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">Heart Disease Prediction</div>
+    <div class="card-body">
+        <p>Predict heart disease risk based on patient data such as age, cholesterol levels, and more.</p>
+        <a href="/heart-disease" class="btn btn-primary">Predict Heart Disease</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">Parkinson's Disease Prediction</div>
+    <div class="card-body">
+        <p>Analyze voice data to predict the likelihood of Parkinson's disease.</p>
+        <a href="/parkinsons" class="btn btn-primary">Predict Parkinson's Disease</a>
+    </div>
+</div>
+{% endblock %}

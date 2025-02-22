@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        background-color: #f4f4f9;
+    }
+    .header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .btn-primary {
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .btn-back {
+        background-color: #6c757d;
+        border: none;
+        border-radius: 5px;
+    }
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="header">
+    <h1>Parkinson's Disease Prediction</h1>
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <label>MDVP:Fo(Hz):</label>
+        <input type="number" step="0.1" name="fo" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:Fhi(Hz):</label>
+        <input type="number" step="0.1" name="fhi" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:Flo(Hz):</label>
+        <input type="number" step="0.1" name="flo" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:Jitter(%):</label>
+        <input type="number" step="0.0001" name="Jitter_percent" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:Jitter(Abs):</label>
+        <input type="number" step="0.0001" name="Jitter_Abs" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:RAP:</label>
+        <input type="number" step="0.0001" name="RAP" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:PPQ:</label>
+        <input type="number" step="0.0001" name="PPQ" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Jitter:DDP:</label>
+        <input type="number" step="0.0001" name="DDP" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:Shimmer:</label>
+        <input type="number" step="0.0001" name="Shimmer" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:Shimmer(dB):</label>
+        <input type="number" step="0.0001" name="Shimmer_dB" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Shimmer:APQ3:</label>
+        <input type="number" step="0.0001" name="APQ3" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Shimmer:APQ5:</label>
+        <input type="number" step="0.0001" name="APQ5" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>MDVP:APQ:</label>
+        <input type="number" step="0.0001" name="APQ" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Shimmer:DDA:</label>
+        <input type="number" step="0.0001" name="DDA" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>NHR:</label>
+        <input type="number" step="0.0001" name="NHR" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>HNR:</label>
+        <input type="number" step="0.0001" name="HNR" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>RPDE:</label>
+        <input type="number" step="0.0001" name="RPDE" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>DFA:</label>
+        <input type="number" step="0.0001" name="DFA" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>spread1:</label>
+        <input type="number" step="0.0001" name="spread1" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>spread2:</label>
+        <input type="number" step="0.0001" name="spread2" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>D2:</label>
+        <input type="number" step="0.0001" name="D2" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>PPE:</label>
+        <input type="number" step="0.0001" name="PPE" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% if diagnosis %}
+    <div class="alert alert-info mt-3">{{ diagnosis }}</div>
+{% endif %}
+
+<a href="/" class="btn btn-back mt-3">Back to Home</a>
+{% endblock %}

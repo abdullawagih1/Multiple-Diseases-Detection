@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        background-color: #f4f4f9;
+    }
+    .header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .btn-primary {
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .btn-back {
+        background-color: #6c757d;
+        border: none;
+        border-radius: 5px;
+    }
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="header">
+    <h1>Diabetes Prediction</h1>
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <label>Number of Pregnancies:</label>
+        <input type="number" name="Pregnancies" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Glucose Level:</label>
+        <input type="number" name="Glucose" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Blood Pressure value:</label>
+        <input type="number" name="BloodPressure" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Skin Thickness value:</label>
+        <input type="number" name="SkinThickness" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Insulin Level:</label>
+        <input type="number" name="Insulin" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>BMI value:</label>
+        <input type="number" step="0.1" name="BMI" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Diabetes Pedigree Function value:</label>
+        <input type="number" step="0.001" name="DiabetesPedigreeFunction" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Age of the Person:</label>
+        <input type="number" name="Age" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% if diagnosis %}
+    <div class="alert alert-info mt-3">{{ diagnosis }}</div>
+{% endif %}
+
+<a href="/" class="btn btn-back mt-3">Back to Home</a>
+{% endblock %}
